@@ -3,6 +3,6 @@ using ToDo.Service.Requests.Models;
 
 namespace ToDo.Service.Requests.Account;
 
-public class GetAllAccountsRequest : IRequest<IEnumerable<AccountModel>>
+public class GetAllTasksRequest : IRequest<IEnumerable<TaskModel>>
 {
 }

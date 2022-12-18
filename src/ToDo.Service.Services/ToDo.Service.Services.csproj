@@ -1,7 +1,7 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
     <PropertyGroup>
-        <TargetFramework>net6.0</TargetFramework>
+        <TargetFramework>net7.0</TargetFramework>
         <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>enable</Nullable>
         <GenerateAssemblyInfo>true</GenerateAssemblyInfo>
@@ -19,6 +19,7 @@
     </ItemGroup>
 
     <ItemGroup>
+      <ProjectReference Include="..\..\ToDo.Service.DataModel\ToDo.Service.DataModel.csproj" />
       <ProjectReference Include="..\ToDo.Service.Entities\ToDo.Service.Entities.csproj" />
       <ProjectReference Include="..\ToDo.Service.Services.Contract\ToDo.Service.Services.Contract.csproj" />
     </ItemGroup>

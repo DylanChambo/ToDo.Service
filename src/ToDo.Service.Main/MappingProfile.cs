@@ -14,6 +14,6 @@ public class MappingProfile : Profile
     /// </summary>
     public MappingProfile()
     {
-        CreateMap<Account, AccountModel>();
+        CreateMap<Entities.Task, TaskModel>();
     }
 }

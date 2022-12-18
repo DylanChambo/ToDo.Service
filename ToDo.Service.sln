@@ -1,5 +1,8 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.4.33110.190
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{75CE71AD-F5D7-462E-BAF0-07B3A2C781D3}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{B70EBBFC-F192-4B7E-984E-12DE7F98744A}"
@@ -7,21 +10,23 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{B70EBBFC-F19
 		README.md = README.md
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ToDo.Service.Api", ".\src\ToDo.Service.Api\ToDo.Service.Api.csproj", "{77F62AF2-8E26-4DE1-AE02-A7BA3395EC53}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ToDo.Service.Api", "src\ToDo.Service.Api\ToDo.Service.Api.csproj", "{77F62AF2-8E26-4DE1-AE02-A7BA3395EC53}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ToDo.Service.Application", ".\src\ToDo.Service.Application\ToDo.Service.Application.csproj", "{F6A187C9-3CD5-4AFD-8731-1F25120DDC1D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ToDo.Service.Application", "src\ToDo.Service.Application\ToDo.Service.Application.csproj", "{F6A187C9-3CD5-4AFD-8731-1F25120DDC1D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ToDo.Service.Entities", ".\src\ToDo.Service.Entities\ToDo.Service.Entities.csproj", "{EA9C41F1-70EB-490B-B3A4-1EC0B49BCB60}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ToDo.Service.Entities", "src\ToDo.Service.Entities\ToDo.Service.Entities.csproj", "{EA9C41F1-70EB-490B-B3A4-1EC0B49BCB60}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ToDo.Service.Main", ".\src\ToDo.Service.Main\ToDo.Service.Main.csproj", "{454F3118-0B00-4F63-97F6-0DE31E7145B1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ToDo.Service.Main", "src\ToDo.Service.Main\ToDo.Service.Main.csproj", "{454F3118-0B00-4F63-97F6-0DE31E7145B1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ToDo.Service.Requests", ".\src\ToDo.Service.Requests\ToDo.Service.Requests.csproj", "{42A7F2AA-83DC-4C04-8A61-7E67538D778F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ToDo.Service.Requests", "src\ToDo.Service.Requests\ToDo.Service.Requests.csproj", "{42A7F2AA-83DC-4C04-8A61-7E67538D778F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ToDo.Service.Services", ".\src\ToDo.Service.Services\ToDo.Service.Services.csproj", "{5048E4C6-78C6-45F8-83F3-7294CDB0C745}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ToDo.Service.Services", "src\ToDo.Service.Services\ToDo.Service.Services.csproj", "{5048E4C6-78C6-45F8-83F3-7294CDB0C745}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ToDo.Service.Services.Contract", ".\src\ToDo.Service.Services.Contract\ToDo.Service.Services.Contract.csproj", "{723A0A69-7864-41C6-B76F-1390894FA22A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ToDo.Service.Services.Contract", "src\ToDo.Service.Services.Contract\ToDo.Service.Services.Contract.csproj", "{723A0A69-7864-41C6-B76F-1390894FA22A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ToDo.Service.Services.Tests", ".\src\ToDo.Service.Services.Tests\ToDo.Service.Services.Tests.csproj", "{C9C6F66F-FFDC-4A81-8D68-F305436C2E21}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ToDo.Service.Services.Tests", "src\ToDo.Service.Services.Tests\ToDo.Service.Services.Tests.csproj", "{C9C6F66F-FFDC-4A81-8D68-F305436C2E21}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ToDo.Service.DataModel", "ToDo.Service.DataModel\ToDo.Service.DataModel.csproj", "{E9F745F8-936C-487F-B93B-D53866535A81}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -61,6 +66,13 @@ Global
 		{C9C6F66F-FFDC-4A81-8D68-F305436C2E21}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C9C6F66F-FFDC-4A81-8D68-F305436C2E21}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C9C6F66F-FFDC-4A81-8D68-F305436C2E21}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E9F745F8-936C-487F-B93B-D53866535A81}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E9F745F8-936C-487F-B93B-D53866535A81}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E9F745F8-936C-487F-B93B-D53866535A81}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E9F745F8-936C-487F-B93B-D53866535A81}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{77F62AF2-8E26-4DE1-AE02-A7BA3395EC53} = {B70EBBFC-F192-4B7E-984E-12DE7F98744A}
@@ -71,5 +83,9 @@ Global
 		{5048E4C6-78C6-45F8-83F3-7294CDB0C745} = {B70EBBFC-F192-4B7E-984E-12DE7F98744A}
 		{723A0A69-7864-41C6-B76F-1390894FA22A} = {B70EBBFC-F192-4B7E-984E-12DE7F98744A}
 		{C9C6F66F-FFDC-4A81-8D68-F305436C2E21} = {75CE71AD-F5D7-462E-BAF0-07B3A2C781D3}
+		{E9F745F8-936C-487F-B93B-D53866535A81} = {B70EBBFC-F192-4B7E-984E-12DE7F98744A}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {7FF9C8AB-CD62-476D-B8B9-EDB106E55BF3}
 	EndGlobalSection
 EndGlobal

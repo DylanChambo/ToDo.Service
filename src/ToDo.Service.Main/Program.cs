@@ -14,6 +14,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddDefaultCorsPolicy(corsPolicyName);
 builder.Services.AddApplication();
 builder.Services.AddServices();
+builder.Services.AddDomainServices();
 builder.Services.AddApplicationLogging();
 builder.Services.AddApplicationPartControllers();
 builder.Services.AddWebApiWithVersioning();

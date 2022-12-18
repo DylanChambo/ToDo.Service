@@ -1,9 +1,9 @@
 ﻿using System.Reflection;
 using Microsoft.Extensions.DependencyInjection;
-using ToDo.Service.Services.Account;
-using ToDo.Service.Services.Contract.Account;
 using ToDo.Service.Services.Contract.Logging;
+using ToDo.Service.Services.Contract.Task;
 using ToDo.Service.Services.Logging;
+using ToDo.Service.Services.Task;
 
 namespace ToDo.Service.Services;
 
@@ -24,7 +24,7 @@ public static class ServicesDependencyInjection
             throw new ArgumentNullException(nameof(services));
         }
 
-        services.AddSingleton<IAccountService, AccountService>();
+        services.AddTransient<ITaskService, TaskService>();
 
         return services;
     }
