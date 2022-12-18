@@ -1,0 +1,68 @@
+# Starter pipeline
+# Start with a minimal pipeline that you can customize to build and deploy your code.
+# Add steps that build, run tests, deploy, and more:
+# https://aka.ms/yaml
+
+trigger:
+- main
+- feature/*
+- hotfix/*
+- release/*
+
+pool:
+  vmImage: ubuntu-latest
+  
+variables:
+  buildConfiguration: 'Release'
+  dotnetSdkVersion: '6.x'
+  projectPathPattern: '**/*.csproj'
+
+steps:
+- task: UseDotNet@2
+  displayName: 'Use .NET SDK $(dotnetSdkVersion)'
+  inputs:
+    packageType: 'sdk'
+    version: '$(dotnetSdkVersion)'
+
+- task: DotNetCoreCLI@2
+  displayName: 'Restore project dependencies'
+  inputs:
+    command: 'restore'
+    feedsToUse: 'select'
+    vstsFeed: '41a021db-1be7-4500-bd59-a0fe3853240a'
+    projects: '$(projectPathPattern)'
+
+- task: DotNetCoreCLI@2
+  displayName: 'Build the project - $(buildConfiguration)'
+  inputs:
+    command: 'build'
+    arguments: '--no-restore --configuration $(buildConfiguration)'
+    projects: '$(projectPathPattern)'
+
+- task: DotNetCoreCLI@2
+  displayName: 'Install .NET tools from local manifest'
+  inputs:
+    command: custom
+    custom: tool
+    arguments: 'restore'
+
+- task: DotNetCoreCLI@2
+  displayName: 'Run unit tests - $(buildConfiguration)'
+  inputs:
+    command: 'test'
+    arguments: '--no-build --configuration $(buildConfiguration) /p:CollectCoverage=true /p:CoverletOutputFormat=cobertura /p:CoverletOutput=$(Build.SourcesDirectory)/TestResults/Coverage/'
+    publishTestResults: true
+    projects: '**/*Tests.csproj'
+
+- task: DotNetCoreCLI@2
+  displayName: 'Publish the project - $(buildConfiguration)'
+  inputs:
+    command: 'publish'
+    projects: 'src/**/*.csproj'
+    publishWebProjects: false
+    arguments: '--no-build --configuration $(buildConfiguration) --output $(Build.ArtifactStagingDirectory)/$(Build.SourceBranchName)$(Build.BuildId)'
+    zipAfterPublish: true
+
+- task: PublishBuildArtifacts@1
+  displayName: 'Publish Artifact: drop'
+  condition: succeeded()
