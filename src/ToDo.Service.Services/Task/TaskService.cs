@@ -16,4 +16,9 @@ public class TaskService : ITaskService
     {
         return _taskRepository.GetAllTasks();
     }
+
+    public async Task<bool> Create(Entities.Task task)
+    {
+        return await _taskRepository.CreateTask(task);
+    }
 }

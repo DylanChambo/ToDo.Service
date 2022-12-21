@@ -21,6 +21,14 @@ namespace ToDo.Service.DataModel.Repositories.Task
             var tasks = _dbContext.Task.ToList();
 
             return tasks;
-        }   
+        }
+
+        public async Task<bool> CreateTask(Entities.Task task)
+        {
+            _dbContext.Task.Add(task);
+            await _dbContext.SaveChangesAsync();
+
+            return true;
+        }
     }
 }

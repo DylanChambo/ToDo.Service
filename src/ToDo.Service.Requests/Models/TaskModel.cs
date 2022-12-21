@@ -8,7 +8,7 @@ public class TaskModel
     /// <summary>
     /// Gets or sets Task Id.
     /// </summary>
-    public int Id { get; set; }
+    public int TaskId { get; set; }
 
     /// <summary>
     /// Gets or sets Task Info.

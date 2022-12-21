@@ -1,6 +1,6 @@
 ﻿using MediatR;
 using Microsoft.AspNetCore.Mvc;
-using ToDo.Service.Requests.Account;
+using ToDo.Service.Requests.Task;
 
 namespace ToDo.Service.Api.Controllers;
 
@@ -40,30 +40,9 @@ public class TaskController : ApiV1ControllerBase
     /// <param name="cancellationToken">Cancellation token.</param>
     /// <returns>A <see cref="Task{TResult}"/> representing the result of the asynchronous operation.</returns>
     [HttpPost]
-    public async Task<IActionResult> Create(CancellationToken cancellationToken)
+    public async Task<IActionResult> Create([FromBody] CreateTaskRequest request, CancellationToken cancellationToken)
     {
-        return Ok();
-    }
-
-    /// <summary>
-    /// Gets an account with the provided id.
-    /// </summary>
-    /// <param name="cancellationToken">Cancellation token.</param>
-    /// <returns>A <see cref="Task{TResult}"/> representing the result of the asynchronous operation.</returns>
-    [HttpPut]
-    public async Task<IActionResult> Update(CancellationToken cancellationToken)
-    {
-        return Ok();
-    }
-
-    /// <summary>
-    /// Gets an account with the provided id.
-    /// </summary>
-    /// <param name="cancellationToken">Cancellation token.</param>
-    /// <returns>A <see cref="Task{TResult}"/> representing the result of the asynchronous operation.</returns>
-    [HttpDelete("{id}")]
-    public async Task<ActionResult<List<Task>>> Delete(int id, CancellationToken cancellationToken)
-    {
+        await _mediator.Send(request, cancellationToken).ConfigureAwait(false);
         return Ok();
     }
 }

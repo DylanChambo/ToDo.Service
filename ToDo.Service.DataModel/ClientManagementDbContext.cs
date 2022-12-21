@@ -1,5 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using Microsoft.Extensions.Configuration;
+using System;
 
 namespace ToDo.Service.DataModel
 {
@@ -18,6 +20,9 @@ namespace ToDo.Service.DataModel
         /// <inheritdoc />
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            modelBuilder.Entity<Entities.Task>()
+            .ToTable("Task")
+            .HasKey(t => t.TaskId);
         }
 
         /// <inheritdoc />

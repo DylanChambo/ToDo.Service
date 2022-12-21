@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using ToDo.Service.Entities;
 using ToDo.Service.Requests.Models;
+using ToDo.Service.Requests.Task;
 
 namespace ToDo.Service.Main;
 

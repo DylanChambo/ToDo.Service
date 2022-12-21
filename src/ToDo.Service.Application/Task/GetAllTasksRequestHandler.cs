@@ -1,10 +1,10 @@
 ﻿using AutoMapper;
 using MediatR;
-using ToDo.Service.Requests.Account;
 using ToDo.Service.Requests.Models;
+using ToDo.Service.Requests.Task;
 using ToDo.Service.Services.Contract.Task;
 
-namespace ToDo.Service.Application.Account;
+namespace ToDo.Service.Application.Task;
 
 public class GetAllTasksRequestHandler : IRequestHandler<GetAllTasksRequest, IEnumerable<TaskModel>>
 {
@@ -22,6 +22,6 @@ public class GetAllTasksRequestHandler : IRequestHandler<GetAllTasksRequest, IEn
     {
         var tasks = _taskService.GetAll();
         var taskModels = _mapper.Map<IEnumerable<TaskModel>>(tasks);
-        return Task.FromResult(taskModels);
+        return System.Threading.Tasks.Task.FromResult(taskModels);
     }
 }

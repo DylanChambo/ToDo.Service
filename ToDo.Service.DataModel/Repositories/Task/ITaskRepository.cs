@@ -7,5 +7,7 @@
         /// </summary>
         /// <returns></returns>
         IEnumerable<Entities.Task> GetAllTasks();
+
+        Task<bool> CreateTask(Entities.Task task);
     }
 }

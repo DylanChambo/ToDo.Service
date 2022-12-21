@@ -1,18 +1,10 @@
-﻿using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
+﻿using MediatR;
 
-namespace ToDo.Service.Entities;
+namespace ToDo.Service.Requests.Task;
 
-/// <summary>
-/// Task Entity.
-/// </summary>
-public class Task
+/// <inheritdoc/>
+public class CreateTaskRequest : IRequest<bool>
 {
-    /// <summary>
-    /// Gets or sets Task Id.
-    /// </summary>
-    public int TaskId { get; set; }
-
     /// <summary>
     /// Gets or sets Task Info.
     /// </summary>
