@@ -1,4 +1,5 @@
 ﻿using ToDo.Service.DataModel;
+using ToDo.Service.Entities.Exceptions;
 
 namespace ToDo.Service.DataModel.Repositories.Task
 {
@@ -26,6 +27,45 @@ namespace ToDo.Service.DataModel.Repositories.Task
         public async Task<bool> CreateTask(Entities.Task task)
         {
             _dbContext.Task.Add(task);
+            await _dbContext.SaveChangesAsync();
+
+            return true;
+        }
+
+        /// <inheritdoc/>
+        public async Task<bool> UpdateTask(Entities.Task updateTask)
+        {
+            var task = _dbContext.Task.FirstOrDefault(t => t.TaskId == updateTask.TaskId);
+
+            if (task is null)
+            {
+                throw new AccountNotFoundException();
+            }
+            else if (updateTask is null)
+            {
+                throw new ArgumentNullException(nameof(updateTask));
+            }
+
+            task.Info = updateTask.Info;
+            task.DueDate = updateTask.DueDate;
+            task.Status = updateTask.Status;
+            task.Priority = updateTask.Priority;
+
+            await _dbContext.SaveChangesAsync();
+            return true;
+        }
+
+        public async Task<bool> DeleteTask(int Id)
+        {
+            var task = _dbContext.Task.FirstOrDefault(t => t.TaskId == Id);
+
+            if (task is null)
+            {
+                throw new AccountNotFoundException();
+            }
+
+            _dbContext.Task.Remove(task);
+
             await _dbContext.SaveChangesAsync();
 
             return true;

@@ -1,10 +1,19 @@
 ﻿using MediatR;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
 namespace ToDo.Service.Requests.Task;
 
-/// <inheritdoc/>
-public class CreateTaskRequest : IRequest<bool>
+public class UpdateTaskRequest : IRequest<bool>
 {
+    /// <summary>
+    /// Gets or sets Task Id.
+    /// </summary>
+    public int TaskId { get; set; }
+
     /// <summary>
     /// Gets or sets Task Info.
     /// </summary>

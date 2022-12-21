@@ -21,4 +21,14 @@ public class TaskService : ITaskService
     {
         return await _taskRepository.CreateTask(task);
     }
+
+    public async Task<bool> Update(Entities.Task task)
+    {
+        return await _taskRepository.UpdateTask(task);
+    }
+
+    public async Task<bool> Delete(int Id)
+    {
+        return await _taskRepository.DeleteTask(Id);
+    }
 }

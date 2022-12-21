@@ -9,5 +9,9 @@
         IEnumerable<Entities.Task> GetAllTasks();
 
         Task<bool> CreateTask(Entities.Task task);
+
+        Task<bool> UpdateTask(Entities.Task updateTask);
+
+        Task<bool> DeleteTask(int Id);
     }
 }
