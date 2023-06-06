@@ -21,8 +21,8 @@ namespace ToDo.Service.DataModel
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Entities.Task>()
-            .ToTable("Task")
-            .HasKey(t => t.TaskId);
+            .ToTable("Tasks")
+            .HasKey(t => t.Id);
         }
 
         /// <inheritdoc />

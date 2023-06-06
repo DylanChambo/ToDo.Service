@@ -11,7 +11,7 @@ public class Task
     /// <summary>
     /// Gets or sets Task Id.
     /// </summary>
-    public int TaskId { get; set; }
+    public int Id { get; set; }
 
     /// <summary>
     /// Gets or sets Task Info.

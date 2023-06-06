@@ -66,7 +66,7 @@ public class TaskController : ApiV1ControllerBase
     /// <param name="cancellationToken">Cancellation token.</param>
     /// <returns>A <see cref="Task{TResult}"/> representing the result of the asynchronous operation.</returns>
     [HttpDelete("{id:int}")]
-    public async Task<IActionResult> Update(int id, CancellationToken cancellationToken)
+    public async Task<IActionResult> Delete(int id, CancellationToken cancellationToken)
     {
         await _mediator.Send(new DeleteTaskRequest(id), cancellationToken).ConfigureAwait(false);
         return Ok();

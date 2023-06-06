@@ -35,7 +35,7 @@ namespace ToDo.Service.DataModel.Repositories.Task
         /// <inheritdoc/>
         public async Task<bool> UpdateTask(Entities.Task updateTask)
         {
-            var task = _dbContext.Task.FirstOrDefault(t => t.TaskId == updateTask.TaskId);
+            var task = _dbContext.Task.FirstOrDefault(t => t.Id == updateTask.Id);
 
             if (task is null)
             {
@@ -57,7 +57,7 @@ namespace ToDo.Service.DataModel.Repositories.Task
 
         public async Task<bool> DeleteTask(int Id)
         {
-            var task = _dbContext.Task.FirstOrDefault(t => t.TaskId == Id);
+            var task = _dbContext.Task.FirstOrDefault(t => t.Id == Id);
 
             if (task is null)
             {

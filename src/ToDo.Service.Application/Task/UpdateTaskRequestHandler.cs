@@ -23,7 +23,7 @@ public class UpdateTaskRequestHandler : IRequestHandler<UpdateTaskRequest, bool>
     {
         var task = new Entities.Task
         {
-            TaskId= request.TaskId,
+            Id= request.Id,
             Info = request.Info,
             DueDate = request.DueDate,
             Status = request.Status,
